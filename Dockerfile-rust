@@ -1,0 +1,8 @@
+FROM  ekidd/rust-musl-builder
+
+ENV CARGO_HOME=/app/.cargo
+
+VOLUME /app
+WORKDIR /app
+
+ENTRYPOINT ["cargo", "build"]
