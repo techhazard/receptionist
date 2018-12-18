@@ -21,5 +21,7 @@ COPY ./start.sh /start.sh
 RUN chmod +x /start.sh
 
 
-ENTRYPOINT ["/start.sh"]
 COPY --from=build_image /home/rust/src/target/x86_64-unknown-linux-musl/release/receptionist /usr/local/bin/receptionist
+
+ENTRYPOINT ["/start.sh"]
+EXPOSE 80
